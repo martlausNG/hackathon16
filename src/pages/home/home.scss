@@ -1,3 +1,56 @@
 page-home {
 
 }
+
+.card {
+  width: calc(95% - 20px);
+  position: relative;
+  overflow: visible;
+  margin-bottom: 25px;
+  float:right;
+
+  &.isBot {
+    float:left;
+
+    .card__fab {
+      left: -20px;
+
+      button {
+        background-image: url('http://www.robotshop.com/media/catalog/product/cache/15/thumbnail/9df78eab33525d08d6e5fb8d27136e95/s/p/sphero-star-wars-bb-8-bluetooth-smartphone-controlled-robotic-ball.jpg');
+      }
+    }
+  }
+}
+
+.card__fab {
+  top: -10px;
+  right: -20px;
+
+  button {
+    height: 40px;
+    width: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('http://www.drawingteachers.com/image-files/draw-a-human-face-12.jpg');
+  }
+}
+
+.card__content {
+  padding: 20px 30px;
+}
+
+.input__button {
+  margin: 0;
+}
+
+.input__input {
+  padding: 0;
+
+  input {
+    padding: 0 !important;
+  }
+}
+.input-cover {
+  position: static;
+}
+

@@ -1,17 +1,28 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title style="text-align: center;">Chat</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content padding id="messagesContent">
+  <ion-card *ngFor="let item of list" [ngClass]="{'isBot': item.isBot}">
+    <ion-fab class="card__fab">
+      <button ion-fab color="light"></button>
+    </ion-fab>
+    <ion-card-content class="card__content">
+      {{item.text}}
+    </ion-card-content>
+  </ion-card>
 </ion-content>
+<ion-footer style="border-top: 1px solid rgba(0,0,0,.2);">
+  <ion-grid style="padding: 0px 5px;">
+    <ion-row style="padding: 0">
+      <ion-col width-90>
+        <ion-input class="input__input" [(ngModel)]="input" type="text" placeholder="Message..." ></ion-input>
+      </ion-col>
+      <ion-col style="padding: 0; display: flex; align-items: center;" width-10>
+        <button class="input__button" ion-button (click)="addComment(input)" [disabled]="!input" style="height: 100%; width: 100%; color:#327eff; background: transparent;"><ion-icon style="font-size: 2em;" ios="md-send" md="md-send"></ion-icon></button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>
