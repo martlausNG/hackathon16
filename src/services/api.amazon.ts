@@ -11,7 +11,7 @@ export class AmazonService {
     private associateId = "chatbot-21";
 
     getProducts(use, price) {
-        var url = "http://webservices.amazon.com/onca/xml?Service=AWSECommerceService&AWSAccessKeyId=" + this.amazonKey + "&AssociateTag=" + this.associateId + "&Operation=ItemSearch&Keywords=the%20hunger%20games&SearchIndex=PCHardware&Timestamp=[YYYY-MM-DDThh:mm:ssZ]&Signature=[Request Signature]&sort=price";
+        //let url = "http://webservices.amazon.com/onca/xml?Service=AWSECommerceService&AWSAccessKeyId=" + this.amazonKey + "&AssociateTag=" + this.associateId + "&Operation=ItemSearch&Keywords=the%20hunger%20games&SearchIndex=PCHardware&Timestamp=[YYYY-MM-DDThh:mm:ssZ]&Signature=[Request Signature]&sort=price";
 
         return new Observable(observer => {
             setTimeout(() => {
