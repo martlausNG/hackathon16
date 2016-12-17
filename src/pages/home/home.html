@@ -14,4 +14,15 @@
     Take a look at the <code>src/pages/</code> directory to add or change tabs,
     update any existing page or create new pages.
   </p>
+  <button ion-button block (click)="search()">Search</button>
+
+  <ion-list *ngFor="let product of products">
+    <ion-item>
+      <ion-thumbnail item-left>
+        <img src="{{product.PictureUrl}}">
+      </ion-thumbnail>
+      <h2>{{product.Name}}</h2>
+      <a ion-button clear item-right href="{{product.Url}}">View</a>
+    </ion-item>
+  </ion-list>
 </ion-content>
