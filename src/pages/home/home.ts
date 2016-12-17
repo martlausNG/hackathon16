@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
+import { Comment } from './comment';
 
 import { AmazonService } from '../../services/api.amazon';
 
@@ -13,9 +14,20 @@ import * as moment from 'moment/moment';
 })
 export class HomePage {
 
+  public input;
+  public list;
   public products;
 
   constructor(public navCtrl: NavController, public amazonService: AmazonService) {
+    this.products = [];
+    this.list = [];
+  }
+
+  addComment() {
+    this.list.push(new Comment(false, this.input));
+    this.list.push(new Comment(true, "Bot answers something"));
+    this.input = null;
+    console.log(this.list);
   }
 
   search(){
